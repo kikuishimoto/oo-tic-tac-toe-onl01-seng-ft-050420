@@ -102,15 +102,19 @@ class TicTacToe
     end
   end
   def winner
-    WIN_COMBINATIONS.detect do |win_combo|
-      if (@board[win_combo[0]]) == "X" && (@board[win_combo[1]]) == "X" && (@board[win_combo[2]]) == "X"
+    index = []
+    index = won?
+    if index == false
+      return nil
+    else
+      if @board[index[0]] == "X"
         return "X"
-      elsif (@board[win_combo[0]]) == "O" && (@board[win_combo[1]]) == "O" && (@board[win_combo[2]]) == "O"
+      else
         return "O"
-
       end
     end
   end
+
   def play
     while over? == false
       turn
