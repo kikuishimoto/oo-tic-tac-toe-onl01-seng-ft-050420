@@ -57,8 +57,8 @@ class TicTacToe
     @board.each do |index|
       if index == "X" || index == "O"
         turn += 1
-      end 
-    end 
+      end
+    end
     return turn
   end
   def current_player
