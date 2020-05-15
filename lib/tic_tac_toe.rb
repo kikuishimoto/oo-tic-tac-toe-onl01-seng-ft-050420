@@ -57,9 +57,9 @@ class TicTacToe
   end
   def current_player
     if turn_count % 2 == 0
-      'X'
+      player ='X'
     else
-      'O'
+      player = 'O'
     end
     return player
   end
@@ -94,7 +94,7 @@ class TicTacToe
         return "X"
       elsif (@board[win_combo[0]]) == "O" && (@board[win_combo[1]]) == "O" && (@board[win_combo[2]]) == "O"
         return "O"
-    
+
       end
     end
   end
