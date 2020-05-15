@@ -53,15 +53,20 @@ class TicTacToe
     end
   end
   def turn_count
-    @board.count {|token| token == 'X' || token == 'O'}
+    turn = 0
+    @board.each do |index|
+      if index == "X" || index == "O"
+        turn += 1
+      end 
+    end 
+    return turn
   end
   def current_player
     if turn_count % 2 == 0
-      player ='X'
+      'X'
     else
-      player = 'O'
+      'O'
     end
-    return player
   end
   def won?
     WIN_COMBINATIONS.detect do |win_combo|
